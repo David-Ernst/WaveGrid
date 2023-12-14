@@ -17,6 +17,8 @@ import java.lang.Math;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import javax.swing.SwingUtilities;
+import java.util.concurrent.CountDownLatch;
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -51,29 +53,35 @@ boolean left = false;
 boolean up = false;
 boolean down = false;
 
-boolean exited = false;
+boolean exited = true;
 boolean paused = false;
 
 ArrayList<String[]> waveData = new ArrayList<String[]>();
-String[] simulationData = new String[]{"10","10","10","100"};
+String[] simulationData = new String[]{"10", "10", "10", "100"};
 boolean editSimulation = false;
 
-GUI gui = new GUI();
+GUI gui;
 Simulation simulation = new Simulation();
 
 
  public void setup() {
+  gui = new GUI();
+  
   /* size commented out by preprocessor */;
   clear();
-
-  GUI gui = new GUI();
-  gui.show();
 }
 
  public void draw() {
   if (!exited) {
     simulation.update();
+    if(gui.controlFrame != null){
+       gui.controlFrame.dispose();
+       gui.controlFrame.disposed = true;
+    }
   } else {
+    if(gui.controlFrame.disposed && exited == true) {
+      gui = new GUI();
+    }
     cursor();
     simulation.setWaves(waveData);
     if (editSimulation) {
@@ -94,9 +102,9 @@ Simulation simulation = new Simulation();
   if (key == ' ') {
     up = false;
   }
-  
-  
-  
+
+
+
   if (key == 'w' || key =='W') {
     forward = false;
   }
@@ -122,7 +130,7 @@ Simulation simulation = new Simulation();
     if (key == ' ') {
       up = true;
     }
-    if(key == 'p' || key == 'P'){
+    if (key == 'p' || key == 'P') {
       paused = !paused;
       key = 0;
     }
@@ -252,13 +260,12 @@ class Camera {
   }
 }
 class ControlFrame extends JFrame {
-
-  public boolean test;
+  public boolean disposed = false;
 
   public ControlFrame() {
     setTitle("Control Frame");
     setSize(200, 300);
-    setLocation(960-100, 540-150);
+    setLocation(width/2-100, height/2-150);
     setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
     JButton openWaves = new JButton("Open Wave List");
@@ -290,39 +297,59 @@ class ControlFrame extends JFrame {
       }
     }
     );
+    JButton moveToBack = new JButton("Go to Simulation");
+    moveToBack.addActionListener(new ActionListener() {
+      @Override
+        public void actionPerformed(ActionEvent e) {
+        disposed = true;
+        dispose();
+        exited = false;
+      }
+    }
+    );
 
-    setLayout(new GridLayout(3, 1));
+    setLayout(new GridLayout(4, 1));
+    add(moveToBack);
     add(openWaves);
     add(editSandbox);
     add(exitAll);
   }
-
-
-  @Override
-    public void toFront() {
-    super.setVisible(true);
-    int state = super.getExtendedState();
-    state &= ~JFrame.ICONIFIED;
-    super.setExtendedState(state);
-    super.setAlwaysOnTop(true);
-    super.toFront();
-    super.requestFocus();
-    super.setAlwaysOnTop(false);
-  }
 }
+
+
+
 class GUI {
   public ControlFrame controlFrame;
+
   GUI() {
+    // Create a CountDownLatch with initial count 1
+    CountDownLatch latch = new CountDownLatch(1);
+
+    createControlFrame(latch);
+
+    try {
+      // Wait for the latch to count down to zero
+      latch.await();
+    }
+    catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 
-  public void show() {
+  public void createControlFrame(CountDownLatch latch) {
     SwingUtilities.invokeLater(() -> {
-      this.controlFrame = new ControlFrame();
-      this.controlFrame.setVisible(true);
+      // Check if the controlFrame is already initialized
+      if (this.controlFrame == null) {
+        this.controlFrame = new ControlFrame();
+        this.controlFrame.setVisible(true);
+        this.controlFrame.toFront();
+      }
+
+      // Count down the latch to signal completion
+      latch.countDown();
     }
     );
   }
-
 }
 class Particle {
   final public float x;  //in m
@@ -554,12 +581,9 @@ class Simulation {
 
     try {
       floatVal = Float.parseFloat(s);
-
-      System.out.println(s + " converted to float becomes --> " + floatVal);
       return floatVal;
     }
     catch (Exception e) {
-      System.out.println("Error occured:- " + e);
       return 0f;
     }
   }

@@ -4,7 +4,7 @@ class ControlFrame extends JFrame {
   public ControlFrame() {
     setTitle("Control Frame");
     setSize(200, 300);
-    setLocation(960-100, 540-150);
+    setLocation(width/2-100, height/2-150);
     setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
     JButton openWaves = new JButton("Open Wave List");
@@ -36,7 +36,7 @@ class ControlFrame extends JFrame {
       }
     }
     );
-    JButton moveToBack = new JButton("Move to Back");
+    JButton moveToBack = new JButton("Go to Simulation");
     moveToBack.addActionListener(new ActionListener() {
       @Override
         public void actionPerformed(ActionEvent e) {
