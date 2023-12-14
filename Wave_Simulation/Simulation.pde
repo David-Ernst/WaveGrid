@@ -67,12 +67,9 @@ class Simulation {
 
     try {
       floatVal = Float.parseFloat(s);
-
-      System.out.println(s + " converted to float becomes --> " + floatVal);
       return floatVal;
     }
     catch (Exception e) {
-      System.out.println("Error occured:- " + e);
       return 0f;
     }
   }

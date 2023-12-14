@@ -20,29 +20,35 @@ boolean left = false;
 boolean up = false;
 boolean down = false;
 
-boolean exited = false;
+boolean exited = true;
 boolean paused = false;
 
 ArrayList<String[]> waveData = new ArrayList<String[]>();
-String[] simulationData = new String[]{"10","10","10","100"};
+String[] simulationData = new String[]{"10", "10", "10", "100"};
 boolean editSimulation = false;
 
-GUI gui = new GUI();
+GUI gui;
 Simulation simulation = new Simulation();
 
 
 void setup() {
+  gui = new GUI();
+  
   fullScreen(P3D);
   clear();
-
-  GUI gui = new GUI();
-  gui.show();
 }
 
 void draw() {
   if (!exited) {
     simulation.update();
+    if(gui.controlFrame != null){
+       gui.controlFrame.dispose();
+       gui.controlFrame.disposed = true;
+    }
   } else {
+    if(gui.controlFrame.disposed && exited == true) {
+      gui = new GUI();
+    }
     cursor();
     simulation.setWaves(waveData);
     if (editSimulation) {
@@ -63,9 +69,9 @@ void keyReleased() {
   if (key == ' ') {
     up = false;
   }
-  
-  
-  
+
+
+
   if (key == 'w' || key =='W') {
     forward = false;
   }
@@ -91,7 +97,7 @@ void keyPressed() {
     if (key == ' ') {
       up = true;
     }
-    if(key == 'p' || key == 'P'){
+    if (key == 'p' || key == 'P') {
       paused = !paused;
       key = 0;
     }

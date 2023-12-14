@@ -1,6 +1,5 @@
 class ControlFrame extends JFrame {
-
-  public boolean test;
+  public boolean disposed = false;
 
   public ControlFrame() {
     setTitle("Control Frame");
@@ -37,23 +36,21 @@ class ControlFrame extends JFrame {
       }
     }
     );
+    JButton moveToBack = new JButton("Move to Back");
+    moveToBack.addActionListener(new ActionListener() {
+      @Override
+        public void actionPerformed(ActionEvent e) {
+        disposed = true;
+        dispose();
+        exited = false;
+      }
+    }
+    );
 
-    setLayout(new GridLayout(3, 1));
+    setLayout(new GridLayout(4, 1));
+    add(moveToBack);
     add(openWaves);
     add(editSandbox);
     add(exitAll);
-  }
-
-
-  @Override
-    public void toFront() {
-    super.setVisible(true);
-    int state = super.getExtendedState();
-    state &= ~JFrame.ICONIFIED;
-    super.setExtendedState(state);
-    super.setAlwaysOnTop(true);
-    super.toFront();
-    super.requestFocus();
-    super.setAlwaysOnTop(false);
   }
 }
