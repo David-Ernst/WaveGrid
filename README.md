@@ -12,7 +12,6 @@ Within this simulation of physical waves, a particle field extends across the x1
 - Press **p** to **pause** the simulation
 - Press **r** to **reset** the simulation
 - Press **ESC** to **pause the simulation and free your mouse** so you can edit the simulation
-**Important:** the window to edit the simulation will be opened in the background
 
 ## Edit The Simulation
 
