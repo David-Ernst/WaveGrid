@@ -34,3 +34,5 @@ Under **Edit Sandbox** you can edit the following properties of your particle fi
  - the **density** of your particle field in particles per meter
  - the **resolution** of your simulation in pixel per meter
 
+### Help & Feedback
+You are very much welcome to message me if there are any problems or if you'd like to leave feedback.
