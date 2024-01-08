@@ -2,7 +2,7 @@
 
 
 Within this simulation of physical waves, a particle field extends across the x1-x2 plane, responding dynamically to the introduction of waves that can be incorporated into the simulation.
-**Please note** that JDK 11 or newer must be installed on the PC in order for it to work.
+**Please note** that JDK 11 or newer must be installed on the PC in order for it to work also if you wish to use the code please note that Processing 4 or newer must be used.
 
 ## Controls
 
