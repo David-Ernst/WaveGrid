@@ -22,7 +22,7 @@ Under **Open Wave List** you can add, edit and delete waves by the following par
  - **ŝ** the **maximum amplitude** in meters
  - **λ** the **wavelength** in meters
  - **c** the **velocity of the wave** in meters per second
- - **start time** the time after the start of the simulation at which the wave shall start
+ - **start time** the time after the start of the simulation at which the wave begins
  - **ϕ** the **phase constant** in radians per meter
 
 **Please note that the simulation begins at x = 0 m and y = 0 m where x ∈ ℝ⁺ and y ∈ ℝ⁺**
