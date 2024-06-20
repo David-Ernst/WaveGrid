@@ -22,7 +22,7 @@ Within this simulation of physical waves, a particle field extends across the x1
 , backward, left and right**
 - Use the **Space Bar and the Shift key** to go **up or down**
 - Press **p** to **pause** the simulation
-- Press **r** to **reset** the simulation
+- Press **r** to **reset** the simulation´s time
 - Press **ESC** to **pause the simulation and free your mouse** so you can edit the simulation
 
 ## Edit The Simulation
