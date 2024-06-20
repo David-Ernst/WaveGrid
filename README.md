@@ -10,9 +10,8 @@ Within this simulation of physical waves, a particle field extends across the x1
 
 <br />
 
-<a href="https://www.youtube.com/watch?v=N9RM5CQbNQc" target="_blank">
-    <img src="https://github.com/David-Ernst/Wave_Simulation/blob/main/Pictures/Preview.PNG" width="75%">
-  </a>
+<img src="https://github.com/David-Ernst/Wave_Simulation/blob/main/Pictures/Preview.PNG" width="75%">
+  
 </div>
 
 <br />
