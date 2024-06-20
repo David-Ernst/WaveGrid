@@ -19,7 +19,7 @@ class Simulation {
   void update() {
     beginCamera();
     noCursor();
-    clear();
+    background(0);
     rotateX(PI/3);
     cam.update();
     timer.execute();

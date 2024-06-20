@@ -33,9 +33,8 @@ Simulation simulation = new Simulation();
 
 void setup() {
   gui = new GUI();
-  
   fullScreen(P3D);
-  clear();
+  background(0);
 }
 
 void draw() {
