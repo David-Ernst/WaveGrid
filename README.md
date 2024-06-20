@@ -10,9 +10,8 @@ Within this simulation of physical waves, a particle field extends across the x1
 
 <br />
 
-<a href="https://www.youtube.com/watch?v=N9RM5CQbNQc" target="_blank">
-    <img src="https://github.com/David-Ernst/Wave_Simulation/blob/main/Pictures/Preview.PNG" width="75%">
-  </a>
+<img src="https://github.com/David-Ernst/Wave_Simulation/blob/main/Pictures/Preview.PNG" width="75%">
+  
 </div>
 
 <br />
@@ -38,7 +37,7 @@ Under **Open Wave List** you can add, edit and delete waves by the following par
  - **start time** the time after the start of the simulation at which the wave begins
  - **ϕ** the **phase constant** in radians per meter
 
-**Please note that the simulation begins at x = 0 m and y = 0 m where x ∈ ℝ⁺ and y ∈ ℝ⁺**
+**Please note that the simulation begins at x = 0 m and y = 0 m where x ∈ ℝ⁺ and y ∈ ℝ⁺.**
 
 Under **Edit Sandbox** you can edit the following properties of your particle field:
 
