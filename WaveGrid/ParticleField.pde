@@ -43,6 +43,7 @@ class ParticleField {
   }
 
   public void update() {
+    highestParticle = 0.00001f;
     for (int i = 0; i < field.length; i++) {
       for (int j = 0; j < field[0].length; j++) {
         field[i][j].update();
