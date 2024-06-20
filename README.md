@@ -25,7 +25,7 @@ Under **Open Wave List** you can add, edit and delete waves by the following par
  - **start time** the time after the start of the simulation at which the wave shall start
  - **ϕ** the **phase constant** in radians per meter
 
-**Please note that the simulation begins at x = 0m and y = 0m where x ∈ N+ and y ∈ N+**
+**Please note that the simulation begins at x = 0m and y = 0m where x ∈ R+ and y ∈ R+**
 
 Under **Edit Sandbox** you can edit the following properties of your particle field:
 
