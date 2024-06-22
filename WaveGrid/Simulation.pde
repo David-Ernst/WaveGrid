@@ -2,7 +2,7 @@ class Simulation {
 
   Camera cam;
   Timer timer;
-  ParticleField f = new ParticleField(10, 10, 10);
+  ParticleField particleField = new ParticleField(10, 10, 10);
 
   ArrayList<Wave> waves;
 
@@ -13,7 +13,7 @@ class Simulation {
     timer = new Timer();
     waves = new ArrayList<Wave>();
 
-    f.setWaves(waves);
+    particleField.setWaves(waves);
   }
 
   void update() {
@@ -23,12 +23,13 @@ class Simulation {
     rotateX(PI/3);
     cam.update();
     timer.execute();
-    f.update();
-    f.renderTriangle();
+    particleField.update();
+    particleField.renderTriangle();
     endCamera();
   }
 
   void setSandbox(String[] data) {
+    //prohibiting errors through wrong inputs
     if (data.length != 4) return;
     float x = strToFloat(data[0]);
     if (x <= 0) x = 10;
@@ -39,10 +40,10 @@ class Simulation {
     float resolution = strToFloat(data[3]);
     if (resolution <= 0) resolution = 100;
 
-    f = new ParticleField(x, y, density);
-    f.setResolution(resolution);
+    particleField = new ParticleField(x, y, density);
+    particleField.setResolution(resolution);
 
-    f.setWaves(waves);
+    particleField.setWaves(waves);
   }
 
   void setWaves(ArrayList<String[]> strList) {
@@ -59,7 +60,7 @@ class Simulation {
 
       waves.add(wave);
     }
-    f.setWaves(waves);
+    particleField.setWaves(waves);
   }
 
   float strToFloat(String s) {

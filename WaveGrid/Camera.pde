@@ -13,8 +13,8 @@ class Camera {
   private float camSensitivity;
 
   Camera() {
-    camPos = new PVector(width/2.0, height/2.0, -200);
-    camCenter = new PVector(width/2.0, height/2.0+1, 0);
+    camPos = new PVector(0, height/2.0, -200);
+    camCenter = new PVector(width/2.0, height/2.0, 0);
     direction = new PVector(0, 1.0, 0);
     directionDegree = new PVector(0, 0.0);
     speed = 5;

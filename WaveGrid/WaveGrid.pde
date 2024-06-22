@@ -28,11 +28,12 @@ String[] simulationData = new String[]{"10", "10", "10", "100"};
 boolean editSimulation = false;
 
 GUI gui;
-Simulation simulation = new Simulation();
+Simulation simulation;
 
 
 void setup() {
   gui = new GUI();
+  simulation = new Simulation();
   fullScreen(P3D);
   background(0);
 }
