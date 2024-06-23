@@ -13,8 +13,8 @@ class WaveTable extends JFrame {
     // Initialize the table model with column names
     // Create a DefaultTableModel with three columns
     Vector<String> columnNames = new Vector<String>();
-    columnNames.add("x-Coordinate");
-    columnNames.add("y-Coordinate");
+    columnNames.add("x1-Coordinate");
+    columnNames.add("x2-Coordinate");
     columnNames.add("ŝ");
     columnNames.add("λ");
     columnNames.add("c");

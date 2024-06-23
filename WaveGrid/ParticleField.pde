@@ -56,7 +56,7 @@ class ParticleField {
     for (int i = 0; i < field.length; i++) {
       for (int j = 0; j < field[0].length; j++) {
         stroke(255);
-        point(field[i][j].x * resolution, field[i][j].y * resolution, field[i][j].z * resolution * -1);
+        point(field[i][j].x * resolution, field[i][j].y * resolution, -field[i][j].z * resolution * -1);
       }
     }
   }
@@ -75,9 +75,9 @@ class ParticleField {
         stroke(c);
         strokeWeight(1);
         beginShape(TRIANGLE_STRIP);
-        vertex(field[i][j].x * resolution, field[i][j].y * resolution, field[i][j].z * resolution * -1);
-        vertex(field[i+1][j].x * resolution, field[i+1][j].y * resolution, field[i+1][j].z * resolution * -1);
-        vertex(field[i+1][j+1].x * resolution, field[i+1][j+1].y * resolution, field[i+1][j+1].z * resolution * -1);
+        vertex(field[i][j].x * resolution, field[i][j].y * resolution, -field[i][j].z * resolution * -1);
+        vertex(field[i+1][j].x * resolution, field[i+1][j].y * resolution, -field[i+1][j].z * resolution * -1);
+        vertex(field[i+1][j+1].x * resolution, field[i+1][j+1].y * resolution, -field[i+1][j+1].z * resolution * -1);
         endShape();
       }
     }

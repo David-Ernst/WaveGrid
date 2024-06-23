@@ -58,7 +58,7 @@ class Wave {
   public float calculateAmplitude(float x) {
     float t = timer.getTime();
     if (x > (t - startTime) * c) return 0f;
-    return -s * sin(k * x - ω * (t - startTime) + ϕ);
+    return s * sin(k * x - ω * (t - startTime) + ϕ);
   }
 
   public float calculateDistance(float x, float y) {

@@ -37,9 +37,9 @@ class SandboxEditor extends JFrame {
 
     JPanel panel = new JPanel();
     panel.setLayout(new GridLayout(5, 2));
-    panel.add(new JLabel("Width:"));
+    panel.add(new JLabel("x1-length:"));
     panel.add(textField1);
-    panel.add(new JLabel("Height:"));
+    panel.add(new JLabel("x2-length:"));
     panel.add(textField2);
     panel.add(new JLabel("Density:"));
     panel.add(textField3);
