@@ -30,20 +30,20 @@ You can find the executable **download** [**here**](https://github.com/David-Ern
 
 Under **Open Wave List** you can add, edit and delete waves by the following parameters:
 
- - **x-Coordinate** in meters
- - **y-Coordinate** in meters
+ - **x1-Coordinate** in meters (x1 ∈ ℝ)
+ - **x2-Coordinate** in meters  (x2 ∈ ℝ)
  - **ŝ** the **maximum amplitude** in meters
  - **λ** the **wavelength** in meters
  - **c** the **velocity of the wave** in meters per second
  - **start time** the time after the start of the simulation at which the wave begins
  - **ϕ** the **phase constant** in radians per meter
 
-**Please note that the simulation begins at x = 0 m and y = 0 m where x ∈ ℝ⁺ and y ∈ ℝ⁺.**
+**Please note that the simulation begins at x1 = 0 m and x2 = 0 m where x1 ∈ ℝ⁺ and x2 ∈ ℝ⁺.**
 
 Under **Edit Sandbox** you can edit the following properties of your particle field:
 
- - the **width** of your particle field in meters
- - the **height** of your particle field in meters
+ - the **x1-length** of your particle field in meters
+ - the **x2-length** of your particle field in meters
  - the **density** of your particle field in particles per meter
  - the **resolution** of your simulation in pixel per meter
 
