@@ -3,7 +3,7 @@
 
 Within this simulation of physical waves, a particle field extends across the x1-x2 plane, responding dynamically to the introduction of waves that can be incorporated into the simulation.
 You can find the executable **download** [**here**](https://github.com/David-Ernst/WaveGrid/releases/tag/v2.0).
-**Please note** that if you wish to use the code Processing 4.3 has been used.
+**Please note** that if you wish to use the code, Processing 4.3 has been used.
 
 </div>
 
