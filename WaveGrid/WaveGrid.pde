@@ -27,18 +27,24 @@ ArrayList<String[]> waveData = new ArrayList<String[]>();
 String[] simulationData = new String[]{"10", "10", "10", "100"};
 boolean editSimulation = false;
 
+boolean initialized = false;
+
 GUI gui;
 Simulation simulation;
 
 
 void setup() {
-  gui = new GUI();
-  simulation = new Simulation();
+  println(System.getProperty("java.version"));
   fullScreen(P3D);
   background(0);
 }
 
 void draw() {
+  if (!initialized) {
+    gui = new GUI();
+    simulation = new Simulation();
+    initialized = true;
+  }
   if (!exited) {
     simulation.update();
     if(gui.controlFrame != null){
